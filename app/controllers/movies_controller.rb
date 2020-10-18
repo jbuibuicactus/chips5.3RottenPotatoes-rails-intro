@@ -10,6 +10,8 @@ class MoviesController < ApplicationController
     @movies = Movie.all
     @all_ratings = Movie.all_ratings
     @ratings_to_show = Array.new
+    @movies_with_ratings = Movie.movies_with_ratings
+    puts @movies_with_ratings
     puts "params ratings"
     puts params[:ratings]
     

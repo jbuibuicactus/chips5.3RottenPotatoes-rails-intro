@@ -13,6 +13,7 @@ class MoviesController < ApplicationController
       ratingslist = []
     else
       ratingslist = params[:ratings].keys
+    end
     @movies_with_ratings = Movie.with_ratings(ratingslist)
     puts @movies_with_ratings
     puts "params ratings"

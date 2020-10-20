@@ -9,7 +9,7 @@ class MoviesController < ApplicationController
   def index
     @movies = Movie.all
     @all_ratings = Movie.all_ratings
-    if params[:ratings].empty?
+    if params[:ratings] == nil
       ratingslist = []
     else
       ratingslist = params[:ratings].keys

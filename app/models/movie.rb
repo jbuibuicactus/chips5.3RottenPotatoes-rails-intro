@@ -7,6 +7,10 @@ class Movie < ActiveRecord::Base
     
     
   def Movie.with_ratings(ratings_selected)
+    if ratings_selected.empty?
+      return Movie.all
+    end
+    
     return Movie.where(rating: ratings_selected)
     
   end

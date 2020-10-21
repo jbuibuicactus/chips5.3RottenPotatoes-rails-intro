@@ -21,7 +21,7 @@ class MoviesController < ApplicationController
     if atagselection == "Title" || atagselection == "Release_Date"
       @sort = atagselection
       orderstr = atagselection.downcase
-      @movies = Movie.order(orderstr)
+      @movies = @movies.order(orderstr)
     end 
   end
 

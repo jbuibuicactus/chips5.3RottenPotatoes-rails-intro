@@ -9,6 +9,8 @@ class MoviesController < ApplicationController
   def index
     @movies = Movie.all
     @all_ratings = Movie.all_ratings
+    atagselection = params[:selected]
+    puts atagselection
     if params[:ratings] == nil
       ratingslist = []
     else

@@ -15,7 +15,8 @@
     </div>
   <% end %>
   
-  <%= submit_tag 'Refresh', id: 'ratings_submit', class: 'btn btn-primary', :name => "selected[@sort]"%>
+  <%= submit_tag 'Refresh', id: 'ratings_submit', class: 'btn btn-primary', value: @sort%>
+  <%= hidden_field_tag :name, :value => 'selected' %>
 <% end %>
 
 <table class="table table-striped col-md-12" id="movies">

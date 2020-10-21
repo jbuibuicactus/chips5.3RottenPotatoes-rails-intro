@@ -16,6 +16,8 @@ class Movie < ActiveRecord::Base
   end
   
   
-  def Movie.sorted()
+  def Movie.selectedSort(sortstr)
+    return Movie.order(sortstr)
+  end
     
 end

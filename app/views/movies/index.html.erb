@@ -22,7 +22,7 @@
     <tr>
       <th class="<%= 'hilite bg-warning' if @sort == 'Title' %>"><%= link_to "Movie Title", movies_path(Hash["ratings" => Hash[@ratings_to_show.collect { |item| [item, "1"] }] , "selected" => "Title"]), id:"title_header" %></th>
       <th>Rating</th>
-      <th class="<%= 'hilite bg-warning' if @sort == 'Release_Date' %>"><%= link_to "Release Date", movies_path({selected: 'Release_Date'}), id:"release_date_header" %></th>
+      <th class="<%= 'hilite bg-warning' if @sort == 'Release_Date' %>"><%= link_to "Release Date", movies_path(Hash["ratings" => Hash[@ratings_to_show.collect { |item| [item, "1"] }] , "selected" => "Release_Date"]), id:"release_date_header" %></th>
       <th>More Info</th>
     </tr>
   </thead>

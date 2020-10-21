@@ -19,11 +19,12 @@ class MoviesController < ApplicationController
     end
     @ratings_to_show = ratingslist
     @movies = Movie.with_ratings(ratingslist)
+    holder = @movies
     
     if atagselection == "Title" || atagselection == "Release_Date"
       @sort = atagselection
       orderstr = atagselection.downcase
-      @movies = @movies.order(orderstr)
+      @movies = holder.order(orderstr)
     end 
   end
 

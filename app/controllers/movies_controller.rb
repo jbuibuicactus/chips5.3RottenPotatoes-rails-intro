@@ -9,6 +9,8 @@ class MoviesController < ApplicationController
   def index
     @movies = Movie.all
     @all_ratings = Movie.all_ratings
+    puts "PARAMETERS"
+    puts params
     atagselection = params[:selected]
     if params[:ratings] == nil
       ratingslist = []
@@ -17,7 +19,7 @@ class MoviesController < ApplicationController
     end
     @ratings_to_show = ratingslist
     @movies = Movie.with_ratings(ratingslist)
-    puts atagselection
+    
     if atagselection == "Title" || atagselection == "Release_Date"
       @sort = atagselection
       orderstr = atagselection.downcase

@@ -18,16 +18,11 @@ class MoviesController < ApplicationController
     @ratings_to_show = ratingslist
     @movies = Movie.with_ratings(ratingslist)
     puts atagselection
-    if atagselection == "Title" || atagselection == "Release_Data"
+    if atagselection == "Title" || atagselection == "Release_Date"
       @sort = atagselection
       orderstr = atagselection.downcase
       @movies = Movie.order(orderstr)
-      
-    end
-    
-    
-    
-    
+    end 
   end
 
   def new

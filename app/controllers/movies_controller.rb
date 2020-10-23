@@ -11,18 +11,22 @@ class MoviesController < ApplicationController
     @all_ratings = Movie.all_ratings
     
     puts params
-    atagselection = params[:selected]
-    if params[:ratings] == nil
+    atagselection = session[:selected].empty? params[:selected] : ''
+    if !(session[:ratings].empty?)
+      ratingslist = session[:ratings]
+    elsif params[:ratings] == nil
       ratingslist = []
     else
       ratingslist = params[:ratings].keys
     end
     @ratings_to_show = ratingslist
+    session[:ratings] = ratingslist
     @movies = Movie.with_ratings(ratingslist)
     holder = @movies
     
     if atagselection == "Title" || atagselection == "Release_Date"
       @sort = atagselection
+      session[:selected] = atagselection
       orderstr = atagselection.downcase
       @movies = holder.order(orderstr)
     end 

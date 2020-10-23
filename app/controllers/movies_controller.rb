@@ -15,6 +15,14 @@ class MoviesController < ApplicationController
     
     atagselection = params[:selected]==nil ? session[:selected] : params[:selected]
     
+    if param[:rating] != nil
+      ratingslist = params[:ratings].keys
+    elsif session[:ratings] != nil
+      ratingslist = session[:ratings]
+    else
+      ratingslist = []
+    end
+=begin
     if !(session[:ratings]== nil)
       ratingslist = session[:ratings]
     elsif params[:ratings] == nil
@@ -22,6 +30,7 @@ class MoviesController < ApplicationController
     else
       ratingslist = params[:ratings].keys
     end
+=end
     @ratings_to_show = ratingslist
     session[:ratings] = ratingslist
     @movies = Movie.with_ratings(ratingslist)

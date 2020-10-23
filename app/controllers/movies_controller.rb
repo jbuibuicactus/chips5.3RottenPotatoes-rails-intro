@@ -14,7 +14,7 @@ class MoviesController < ApplicationController
     puts session
     
     atagselection = params[:selected]==nil ? session[:selected] : params[:selected]
-    if 
+    
     if !(session[:ratings]== nil)
       ratingslist = session[:ratings]
     elsif params[:ratings] == nil

@@ -20,7 +20,7 @@ class MoviesController < ApplicationController
     elsif session[:ratings] != nil
       ratingslist = session[:ratings]
     else
-      ratingslist = []
+      ratingslist = @all_ratings
     end
     puts "RATINGS LIST"
     puts ratingslist

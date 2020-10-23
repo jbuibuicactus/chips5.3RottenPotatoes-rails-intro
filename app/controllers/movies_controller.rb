@@ -31,6 +31,8 @@ class MoviesController < ApplicationController
       ratingslist = params[:ratings].keys
     end
 =end
+    puts "RATINGS LIST"
+    puts ratingslist
     @ratings_to_show = ratingslist
     session[:ratings] = ratingslist
     @movies = Movie.with_ratings(ratingslist)

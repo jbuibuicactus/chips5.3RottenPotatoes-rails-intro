@@ -22,15 +22,6 @@ class MoviesController < ApplicationController
     else
       ratingslist = []
     end
-=begin
-    if !(session[:ratings]== nil)
-      ratingslist = session[:ratings]
-    elsif params[:ratings] == nil
-      ratingslist = []
-    else
-      ratingslist = params[:ratings].keys
-    end
-=end
     puts "RATINGS LIST"
     puts ratingslist
     @ratings_to_show = ratingslist

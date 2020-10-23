@@ -11,7 +11,7 @@ class MoviesController < ApplicationController
     @all_ratings = Movie.all_ratings
     
     puts params
-    atagselection = session[:selected].empty? params[:selected] : ''
+    atagselection = session[:selected].empty? ? params[:selected] : ''
     if !(session[:ratings].empty?)
       ratingslist = session[:ratings]
     elsif params[:ratings] == nil
